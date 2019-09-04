@@ -6,49 +6,49 @@
         </a>
         <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-map-marker"></i>&nbsp;
-            <span>{{ 'Zonal Valuation' | translate }}</span>
+            <span>{{ 'Menu 1' | translate }}</span>
         </a>
         <a [routerLink]="['/grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-bank"></i>&nbsp;
-            <span>{{ 'LRA Items' | translate }}</span>
+            <span>{{ 'Menu 2' | translate }}</span>
         </a>
         <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-map"></i>&nbsp;
-            <span>{{ 'Interactive Map' | translate }}</span>
+            <span>{{ 'Menu 3' | translate }}</span>
         </a>
         <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-close"></i>&nbsp;
-            <span>{{ 'Foreclosed' | translate }}</span>
+            <span>{{ 'Menu 4' | translate }}</span>
         </a>
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('pages')">
                 <i class="fa fa-calculator"></i>&nbsp;
-                <span>{{ 'Taxes' | translate }}</span>
+                <span>{{ 'Menu 5' | translate }}</span>
             </a>
             <li class="nested" [class.expand]="showMenu === 'pages'">
                 <ul class="submenu">
                     <li>
                         <a [routerLink]="['/tax-declaration']" [routerLinkActive]="['router-link-active']">
                             <i class="fa fa-fw fa-bookmark-o"></i>&nbsp;
-                            <span>{{ 'Tax Declaration' | translate }}</span>
+                            <span>{{ 'Menu 5.1' | translate }}</span>
                         </a>
                     </li>
                     <li>
                         <a [routerLink]="['/tax-receipt']" [routerLinkActive]="['router-link-active']">
                             <i class="fa fa-fw fa-list-alt"></i>&nbsp;
-                            <span>{{ 'Tax Receipts' | translate }}</span>
+                            <span>{{ 'Menu 5.2' | translate }}</span>
                         </a>
                     </li>
                     <li>
                         <a [routerLink]="['/tax-mapping']" [routerLinkActive]="['router-link-active']">
                             <i class="fa fa-fw fa-map-signs"></i>&nbsp;
-                            <span>{{ 'Tax Mapping' | translate }}</span>
+                            <span>{{ 'Menu 5.3' | translate }}</span>
                         </a>
                     </li>
                     <li>
                         <a [routerLink]="['/additional-taxes']" [routerLinkActive]="['router-link-active']">
                             <i class="fa fa-fw fa-money"></i>&nbsp;
-                            <span>{{ 'Additional Taxes' | translate }}</span>
+                            <span>{{ 'Menu 5.4' | translate }}</span>
                         </a>
                     </li>
                 </ul>
@@ -56,23 +56,23 @@
         </div>
         <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-gavel"></i>&nbsp;
-            <span>{{ 'Litigations' | translate }}</span>
+            <span>{{ 'Menu 6' | translate }}</span>
         </a>
         <a [routerLink]="['/bs-element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-building-o"></i>&nbsp;
-            <span>{{ 'Properties' | translate }}</span>
+            <span>{{ 'Menu 7' | translate }}</span>
         </a>
         <a [routerLink]="['/grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-cubes"></i>&nbsp;
-            <span>{{ 'Others' | translate }}</span>
+            <span>{{ 'Menu 8' | translate }}</span>
         </a>
         <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
-            <span>{{ 'Reports' | translate }}</span>
+            <span>{{ 'Menu 9' | translate }}</span>
         </a>
         <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-cogs"></i>&nbsp;
-            <span>{{ 'Admin' | translate }}</span>
+            <span>{{ 'Menu 10' | translate }}</span>
         </a>
         <!-- <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('pages')">
