@@ -1,0 +1,66 @@
+<div [@routerTransition]>
+  <p-toast [style]="{marginTop: '50px'}" key="tc"></p-toast>
+  <div [ngBusy]="busy"></div>
+  <div class="card">
+    <div class="card-header">
+      List of Person
+    </div>
+    <div class="card-body">
+      <div class="row" style="margin: -10px 0px 10px 0px">
+        <button type="button" class="btn btn-primary" style="margin-right: 5px" (click)="openAddPersonWindow()"><i class="fa fa-plus"></i>  Add Person</button>
+        <button type="button" class="btn btn-success" (click)="getPersons()"><i class="fa fa-refresh"></i>  Retrieve</button>
+      </div>
+      <div class="col-md-12 form-group input-group" style="padding: 0px">
+        <input type="search" name="searchPerson" id="searchPerson" class="form-control" #searchPerson (keyup)="search(searchPerson.value)" placeholder="Search Person Here...">
+      </div>
+      <div class="col-md-12 table-responsive" style="padding: 0px" *ngIf="this.lstPerson">
+        <table id="no-more-tables" class="card-block table-hover table-striped table rwd-table">
+          <thead>
+            <tr>
+              <th>OBJECT ID</th>
+              <th>ID</th>
+              <th>FIRST NAME</th>
+              <th>LAST NAME</th>
+              <th>EMAIL</th>
+              <th>GENDER</th>
+              <th>IP ADDRESS</th>
+              <th>ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of lstPersonSliced; let i = index">
+              <td>{{item._id}}</td>
+              <td>{{item.id}}</td>
+              <td>
+                <span *ngIf="this.editMode !== i">{{item.first_name}}</span>
+                <input *ngIf="this.editMode === i" type="text" name="firstName" id="firstName" class="form-control" [(ngModel)]="item.first_name">
+              </td>
+              <td>
+                <span *ngIf="this.editMode !== i">{{item.last_name}}</span>
+                <input *ngIf="this.editMode === i" type="text" name="lastName" id="lastName" class="form-control" [(ngModel)]="item.last_name">
+              </td>
+              <td>
+                <span *ngIf="this.editMode !== i">{{item.email}}</span>
+                <input *ngIf="this.editMode === i" type="text" name="email" id="email" class="form-control" [(ngModel)]="item.email">
+              </td>
+              <td>
+                <span *ngIf="this.editMode !== i">{{item.gender}}</span>
+                <input *ngIf="this.editMode === i" type="text" name="gender" id="gender" class="form-control" [(ngModel)]="item.gender">
+              </td>
+              <td>
+                <span *ngIf="this.editMode !== i">{{item.ip_address}}</span>
+                <input *ngIf="this.editMode === i" type="text" name="ipAddress" id="ipAddress" class="form-control" [(ngModel)]="item.ip_address">
+              </td>
+              <td style="min-width: 110px">
+                <button type="button" [ngClass]="(this.editMode === i) ? 'btn btn-primary' : 'btn btn-warning'" style="margin-right: 5px" (click)="(this.editMode === i) ? update(item) : edit(i)"><i [ngClass]="(this.editMode === i) ? 'fa fa-save' : 'fa fa-pencil'"></i></button>
+                <button type="button" [ngClass]="(this.editMode === i) ? 'btn btn-secondary' : 'btn btn-danger'" (click)="(this.editMode === i) ? cancel() : delete(item)"><i [ngClass]="(this.editMode === i) ? 'fa fa-times' : 'fa fa-trash'"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p-paginator [rows]="10" [totalRecords]="lstPerson.length" [rowsPerPageOptions]="[10,20,30,40,50]" (onPageChange)="paginate($event)"></p-paginator>
+      </div>
+    </div>
+  </div>
+</div>

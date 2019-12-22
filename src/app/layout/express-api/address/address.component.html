@@ -1,0 +1,45 @@
+<div [@routerTransition]>
+  <div [ngBusy]="busy"></div>
+  <div class="card">
+    <div class="card-header">
+      List of Address
+    </div>
+    <div class="card-body">
+      <div class="row" style="margin: -10px 0px 10px 0px">
+        <button type="button" class="btn btn-primary" style="margin-right: 5px"><i class="fa fa-plus"></i>  Add Address</button>
+        <button type="button" class="btn btn-success" (click)="getAddress()"><i class="fa fa-refresh"></i>  Retrieve</button>
+      </div>
+      <div class="col-md-12 table-responsive" style="padding: 0px" *ngIf="this.lstAddress">
+        <table id="no-more-tables" class="card-block table-hover table-striped table rwd-table">
+          <thead>
+            <tr>
+              <th>OBJECT ID</th>
+              <th>ID</th>
+              <th>ADDRESS</th>
+              <th>CITY</th>
+              <th>STATE</th>
+              <th>COUNTRY</th>
+              <th>PHONE</th>
+              <th>ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of lstAddress">
+              <td>{{item._id}}</td>
+              <td>{{item.id}}</td>
+              <td>{{item.address}}</td>
+              <td>{{item.city}}</td>
+              <td>{{item.state}}</td>
+              <td>{{item.country}}</td>
+              <td>{{item.phone}}</td>
+              <td style="min-width: 110px">
+                <button type="button" class="btn btn-warning" style="margin-right: 5px"><i class="fa fa-pencil"></i></button>
+                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

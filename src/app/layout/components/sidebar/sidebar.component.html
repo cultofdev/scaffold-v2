@@ -21,43 +21,85 @@
             <span>{{ 'Menu 4' | translate }}</span>
         </a>
         <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('pages')">
+            <a class="list-group-item" (click)="addExpandClass('spring')">
                 <i class="fa fa-calculator"></i>&nbsp;
-                <span>{{ 'Menu 5' | translate }}</span>
+                <span>{{ 'Spring API' | translate }}</span>
             </a>
-            <li class="nested" [class.expand]="showMenu === 'pages'">
-                <ul class="submenu">
+            <li class="nested" [class.expand]="showMenu === 'spring'">
+                <ul class="submenu" style="margin-bottom: 0px">
                     <li>
                         <a [routerLink]="['/tax-declaration']" [routerLinkActive]="['router-link-active']">
                             <i class="fa fa-fw fa-bookmark-o"></i>&nbsp;
-                            <span>{{ 'Menu 5.1' | translate }}</span>
+                            <span>{{ 'Author' | translate }}</span>
                         </a>
                     </li>
                     <li>
                         <a [routerLink]="['/tax-receipt']" [routerLinkActive]="['router-link-active']">
                             <i class="fa fa-fw fa-list-alt"></i>&nbsp;
-                            <span>{{ 'Menu 5.2' | translate }}</span>
+                            <span>{{ 'Post' | translate }}</span>
                         </a>
                     </li>
                     <li>
                         <a [routerLink]="['/tax-mapping']" [routerLinkActive]="['router-link-active']">
                             <i class="fa fa-fw fa-map-signs"></i>&nbsp;
-                            <span>{{ 'Menu 5.3' | translate }}</span>
+                            <span>{{ 'Person' | translate }}</span>
                         </a>
                     </li>
                     <li>
                         <a [routerLink]="['/additional-taxes']" [routerLinkActive]="['router-link-active']">
                             <i class="fa fa-fw fa-money"></i>&nbsp;
-                            <span>{{ 'Menu 5.4' | translate }}</span>
+                            <span>{{ 'Address' | translate }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/additional-taxes']" [routerLinkActive]="['router-link-active']">
+                            <i class="fa fa-fw fa-usd"></i>&nbsp;
+                            <span>{{ 'Stock' | translate }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/additional-taxes']" [routerLinkActive]="['router-link-active']">
+                            <i class="fa fa-fw fa-car"></i>&nbsp;
+                            <span>{{ 'Car' | translate }}</span>
                         </a>
                     </li>
                 </ul>
             </li>
         </div>
-        <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-gavel"></i>&nbsp;
-            <span>{{ 'Menu 6' | translate }}</span>
-        </a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('express')">
+                <i class="fa fa-exchange"></i>&nbsp;
+                <span>{{ 'Express API' | translate }}</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'express'">
+                <ul class="submenu" style="margin-bottom: 0px">
+                    <li>
+                        <a [routerLink]="['/person']" [routerLinkActive]="['router-link-active']">
+                            <i class="fa fa-fw fa-map-signs"></i>&nbsp;
+                            <span>{{ 'Person' | translate }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/address']" [routerLinkActive]="['router-link-active']">
+                            <i class="fa fa-fw fa-money"></i>&nbsp;
+                            <span>{{ 'Address' | translate }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/stock']" [routerLinkActive]="['router-link-active']">
+                            <i class="fa fa-fw fa-usd"></i>&nbsp;
+                            <span>{{ 'Stock' | translate }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/car']" [routerLinkActive]="['router-link-active']">
+                            <i class="fa fa-fw fa-car"></i>&nbsp;
+                            <span>{{ 'Car' | translate }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
         <a [routerLink]="['/bs-element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-building-o"></i>&nbsp;
             <span>{{ 'Menu 7' | translate }}</span>
@@ -74,34 +116,6 @@
             <i class="fa fa-fw fa-cogs"></i>&nbsp;
             <span>{{ 'Menu 10' | translate }}</span>
         </a>
-        <!-- <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('pages')">
-                <i class="fa fa-plus"></i>&nbsp;
-                <span>{{ 'Menu' | translate }}</span>
-            </a>
-            <li class="nested" [class.expand]="showMenu === 'pages'">
-                <ul class="submenu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </div> -->
     </div>
     <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
         <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
